@@ -1,3 +1,2 @@
 colorscheme dracula
-set spell
 
