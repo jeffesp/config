@@ -13,6 +13,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec rofi -show run -modi run
 bindsym $mod+q exec rofi -show window -modi window
+bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+o exec --no-startup-id "i3lock -d -e -c 2C3E50"
 
 # change focus

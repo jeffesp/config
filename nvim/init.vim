@@ -73,6 +73,10 @@ set backupdir^=$TEMP
 set exrc
 set secure
 
+
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
 let g:jsx_ext_required = 0
 
 let g:ale_javascript_tsserver_use_global = 1
@@ -80,11 +84,11 @@ let g:ale_completion_enabled = 1
 "let g:ale_linters_explicit = 1 " only run configured linters
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
-"let g:ale_lint_on_enter = 0 " don't run when file is accessed
-"let g:ale_lint_on_save = 1 " lint when file saved 
-"let g:ale_lint_on_text_changed = 0 " lint when file changed
+let g:ale_lint_on_enter = 0 " don't run when file is accessed
+let g:ale_lint_on_save = 1 " lint when file saved 
+let g:ale_lint_on_text_changed = 0 " lint when file changed
 let g:ale_linters = {
-\   'javascript': ['tsserver'],
+\   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1 " fix when file saved
 let g:ale_fixers = {

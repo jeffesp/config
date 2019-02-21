@@ -37,7 +37,7 @@ font-2 = "MaterialDesignIcons:pixelsize=10;0"
 
 modules-left = i3
 modules-center = 
-modules-right = cpu memory battery backlight-acpi pulseaudio date 
+modules-right = cpu memory battery backlight-acpi pulseaudio date monitors
 
 tray-position = right
 tray-padding = 2
@@ -149,6 +149,14 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/monitors]
+type = custom/script
+exec = ~/.config/polybar/monitors.sh
+interval = 5
+click-left= ~/.config/polybar/monitors.sh --single
+click-right = ~/.config/polybar/monitors.sh --work
+
 
 [module/date]
 type = internal/date
