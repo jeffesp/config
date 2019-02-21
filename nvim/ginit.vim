@@ -1,2 +1,3 @@
-colorscheme dracula
+colorscheme OceanicNext
 
+Guifont Cousine:h10

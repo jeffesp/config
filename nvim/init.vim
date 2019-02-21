@@ -24,12 +24,16 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug '~/.fzf'
 Plug 'mhartington/oceanic-next'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
 " Initialize plugin system
 call plug#end()
 
+let mapleader = ','
 
-set nu
+" line numbers
+set number
 
 " tab/space settings
 set expandtab
@@ -46,8 +50,6 @@ set ignorecase                          " don't care about case...
 set smartcase                           " ...unless there is one capital
 set gdefault                            " have :s///g flag on by default
 
-" clear search highlight with Alt-Q
-:nnoremap <M-h> :nohlsearch<return> 
 
 " make things pretty
 syntax on
@@ -62,6 +64,7 @@ set wrap
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" backup/swap file settings
 set nobackup
 set nowritebackup
 set backupdir-=.
@@ -70,33 +73,37 @@ set backupdir^=$TEMP
 set exrc
 set secure
 
-
-let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
+let g:ale_javascript_tsserver_use_global = 1
+let g:ale_completion_enabled = 1
+"let g:ale_linters_explicit = 1 " only run configured linters
 let g:ale_sign_error = '!'
 let g:ale_sign_warning = '?'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
+"let g:ale_lint_on_enter = 0 " don't run when file is accessed
+"let g:ale_lint_on_save = 1 " lint when file saved 
+"let g:ale_lint_on_text_changed = 0 " lint when file changed
 let g:ale_linters = {
-\   'javascript': ['eslint'],
+\   'javascript': ['tsserver'],
+\}
+let g:ale_fix_on_save = 1 " fix when file saved
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'html': ['prettier'],
 \}
 
+"let g:user_emmet_leader_key='<Tab>'
+"let g:user_emmet_settings = {
+"  \  'javascript.jsx' : {
+"    \      'extends' : 'jsx',
+"    \  },
+"  \}
 
-let g:user_emmet_leader_key='<Tab>'
-let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
-
+" FZF config
+let $FZF_DEFAULT_COMMAND = 'fd --type f -H -E .git'
 
 inoremap jj <Esc>
 nnoremap <Space> i
-
-let mapleader = ','
 map <silent> <leader>f :FZF<CR>
-
-" fixes /dev/tty read issue?
-let g:fzf_layout={'down': '30%'}
+map <silent> <leader>b :buffers<CR>
