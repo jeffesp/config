@@ -128,6 +128,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec --no-startup-id nm-applet
+exec --no-startup-id gnome-settings-daemon
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Pulse Audio controls
@@ -147,6 +148,10 @@ client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
+
+workspace 1 output eDP1 DP1
+workspace 2 output eDP1 DP2
+workspace 3 output eDP1 DP2
 
 #bar {
 #  status_command i3status

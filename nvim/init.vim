@@ -10,7 +10,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'mattn/emmet-vim'
 Plug 'w0rp/ale'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -19,13 +18,17 @@ Plug 'kassio/neoterm'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+" Plug 'psf/black'
+" colorschemes
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim', { 'as': 'onedark' }
 Plug 'mhartington/oceanic-next'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-notes'
 
 " Initialize plugin system
 call plug#end()
@@ -59,7 +62,7 @@ set scrolloff=10                        " always have some lines around current
 set hidden                              " don't have to write bufffer to change to another
 set nojoinspaces
 
-set textwidth=120
+set textwidth=100
 set wrap
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -76,6 +79,10 @@ set secure
 
 let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
+
+" black config - custom line length and don't do anything to quotes
+let g:black_linelength = 100
+let g:black_skip_string_normalization = 1
 
 let g:jsx_ext_required = 0
 
@@ -97,17 +104,21 @@ let g:ale_fixers = {
 \   'html': ['prettier'],
 \}
 
-"let g:user_emmet_leader_key='<Tab>'
-"let g:user_emmet_settings = {
-"  \  'javascript.jsx' : {
-"    \      'extends' : 'jsx',
-"    \  },
-"  \}
-
 " FZF config
 let $FZF_DEFAULT_COMMAND = 'fd --type f -H -E .git'
+let g:fzf_buffers_jump = 1
 
 inoremap jj <Esc>
 nnoremap <Space> i
+nnoremap <C-l> mpgqip`p
+nnoremap <C-a> {v}J"+y<CR>u
+
 map <silent> <leader>f :FZF<CR>
-map <silent> <leader>b :buffers<CR>
+map <silent> <leader>b :Buffers<CR>
+
+nnoremap <leader>y "*y
+nnoremap <leader><leader> <c-^>
+nnoremap <leader><space> :nohlsearch<CR>
+
+
+

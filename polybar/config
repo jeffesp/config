@@ -8,7 +8,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/default]
-monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:DP-1}
 monitor-fallback = eDP-1
 bottom = true
 width = 100%
