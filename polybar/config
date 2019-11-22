@@ -10,7 +10,7 @@ alert = #bd2c40
 [bar/default]
 monitor = ${env:MONITOR:DP-1}
 monitor-fallback = eDP-1
-bottom = true
+bottom = true 
 width = 100%
 height = 27
 radius = 0
