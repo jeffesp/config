@@ -1,0 +1,10 @@
+#export TERMINAL=/usr/bin/urxvt
+xrdb -merge ~/.Xresources
+xset b off
+# xsetroot -solid darkslategrey
+# xsetroot -cursor_name left_ptr 
+setxkbmap -layout us -option ctrl:nocaps
+greenclip daemon &
+
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
