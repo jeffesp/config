@@ -62,7 +62,7 @@ set scrolloff=10                        " always have some lines around current
 set hidden                              " don't have to write bufffer to change to another
 set nojoinspaces
 
-set textwidth=100
+set textwidth=90
 set wrap
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -121,4 +121,5 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader><space> :nohlsearch<CR>
 
 
+tnoremap <Esc> <C-\><C-n>
 

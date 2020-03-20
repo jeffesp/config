@@ -1,3 +1,3 @@
-colorscheme OceanicNext
+colorscheme OceanicNextLight
 
-Guifont Cousine:h11
+Guifont Cousine:h12
