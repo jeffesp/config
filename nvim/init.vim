@@ -76,7 +76,6 @@ set backupdir^=$TEMP
 set exrc
 set secure
 
-
 let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -105,7 +104,7 @@ let g:ale_fixers = {
 \}
 
 " FZF config
-let $FZF_DEFAULT_COMMAND = 'fd --type f -H -E .git'
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --exclude .git'
 let g:fzf_buffers_jump = 1
 
 inoremap jj <Esc>
