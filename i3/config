@@ -2,7 +2,7 @@
 
 set $mod Mod4
 
-font pango:DejaVu Sans Condensed 10 
+font pango:Fira Code Retina 12
 floating_modifier $mod
 workspace_layout tabbed
 hide_edge_borders vertical
@@ -99,7 +99,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -138,7 +138,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle       # 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle  # mute internal microphone
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86Display exec --no-startup-id ~/.config/polybar/monitors.sh --single
+# bindsym XF86Display exec --no-startup-id ~/.config/polybar/monitors.sh --single
 bindsym XF86WakeUp  exec --no-startup-id dbus-send --system --type=method_call  --dest="org.freedesktop.UPower" "/org/freedesktop/UPower/KbdBacklight" "org.freedesktop.UPower.KbdBacklight.SetBrightness" int32:0 
 
 
@@ -151,27 +151,24 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-workspace 1 output eDP1 DP1
-workspace 2 output eDP1 DP2
-workspace 3 output eDP1 DP2
+# workspace 1 output DP1 DP1
+# workspace 2 output DP1 DP2
+# workspace 3 output DP1 DP2
 
-#bar {
-#  status_command i3status
-#  tray_output primary
-#  colors {
-#    background #282A36
-#    statusline #F8F8F2
-#    separator  #44475A
-#
-#    focused_workspace  #44475A #44475A #F8F8F2
-#    active_workspace   #282A36 #44475A #F8F8F2
-#    inactive_workspace #282A36 #282A36 #BFBFBF
-#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#    binding_mode       #FF5555 #FF5555 #F8F8F2
-#  }
+# bar {
+#   status_command i3status
+#   tray_output primary
+#   colors {
+#     background #282A36
+#     statusline #F8F8F2
+#     separator  #44475A
+
+#     focused_workspace  #44475A #44475A #F8F8F2
+#     active_workspace   #282A36 #44475A #F8F8F2
+#     inactive_workspace #282A36 #282A36 #BFBFBF
+#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#     binding_mode       #FF5555 #FF5555 #F8F8F2
+#   }
 #}
-
 # specific application config
-
-for_window [class="Tomboy"] floating enable
 
