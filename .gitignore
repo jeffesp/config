@@ -2,6 +2,6 @@
 !.gitignore
 !i3
 !kitty
-!neovim
+!nvim
 !xsessionrc
 
