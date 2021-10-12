@@ -12,7 +12,7 @@ monitor = ${env:MONITOR:DP-1}
 monitor-fallback = DP-2
 bottom = true 
 width = 100%
-height = 27
+height = 34
 radius = 0
 fixed-center = false
 
@@ -31,9 +31,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "LiberationSans:pixelsize=10;0"
-font-1 = "FontAwesome:pixelsize=10;0"
-font-2 = "MaterialDesignIcons:pixelsize=10;0"
+font-0 = "LiberationSans:pixelsize=12;0"
+font-1 = "FontAwesome:pixelsize=12;0"
+font-2 = "MaterialDesignIcons:pixelsize=12;0"
 
 modules-left = i3
 modules-center = 
@@ -137,7 +137,7 @@ interval = 10.0
 format-connected =  <ramp-signal> <label-connected>
 label-connected = %essid%
 
-format-disconnected =
+;format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -156,7 +156,6 @@ ramp-signal-foreground = ${colors.foreground-alt}
 ; interval = 5
 ; click-left= ~/.config/polybar/monitors.sh --single
 ; click-right = ~/.config/polybar/monitors.sh --work
-
 
 [module/date]
 type = internal/date
@@ -197,34 +196,6 @@ bar-volume-indicator-font = 2
 bar-volume-fill = ▐
 bar-volume-fill-font = 2
 bar-volume-empty = ▐
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = 
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -271,7 +242,7 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 
 [global/wm]
 margin-top = 5
