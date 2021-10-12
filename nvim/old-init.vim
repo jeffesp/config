@@ -8,19 +8,19 @@ set encoding=utf-8
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale'
-Plug 'skywind3000/asyncrun.vim'
+Plug 'sheerun/vim-polyglot'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'w0rp/ale'
+" Plug 'skywind3000/asyncrun.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'janko-m/vim-test'
+" Plug 'janko-m/vim-test'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'prettier/vim-prettier', {
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug '~/.fzf'
+" Plug 'prettier/vim-prettier', {
+"  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'junegunn/fzf.vim'
 " Plug 'psf/black'
 " colorschemes
